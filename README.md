@@ -53,14 +53,37 @@ The charts below illustrate the model's convergence over 40 epochs. The curves d
 ### Confusion Matrices
 Confusion matrices provide a detailed analysis of classification performance across all 12 signal types for both Training and Validation sets.
 
-* **Observations:** Signal classes such as `Barker`, `LFM`, and `Rect` achieve near-perfect recognition accuracy. Minor confusion is observed between `16-QAM` and `QPSK` in high-noise environments (low SNR) due to their similar spectrogram characteristics.
-
 | Training Set | Validation Set |
 | :---: | :---: |
 | ![Train Confusion Matrix](img/train_confusion_matrix.png) | ![Val Confusion Matrix](img/val_confusion_matrix.png) |
 
-### Technical Requirements Compliance
-The project strictly adheres to the mandatory technical constraints:
-* **Trainable Parameters:** The total number of model weights is kept below 100,000.
-* **Classification Accuracy:** Final validation accuracy exceeds the 90% threshold.
-* **Reproducibility:** A fixed random seed was implemented across all libraries to ensure consistent results.
+## Hidden Test Set Evaluation
+
+### Performance Summary
+The model was evaluated on a hidden test set provided by the instructor, consisting of 307,200 samples (25,600 samples per class). The system achieved an **Overall Accuracy of 90.1%**, fulfilling the technical requirements for the project.
+
+| Class | Precision | Recall | F1-Score |
+| :--- | :---: | :---: | :---: |
+| **LFM** | 0.9996 | 0.9988 | **0.9992** |
+| **Barker** | 0.9929 | 0.9900 | **0.9914** |
+| **GFSK** | 0.9890 | 0.9829 | **0.9859** |
+| **B-FM** | 0.9939 | 0.9689 | **0.9813** |
+| **CPFSK** | 0.9728 | 0.9631 | 0.9679 |
+| **StepFM** | 0.9689 | 0.9385 | 0.9534 |
+| **Rect** | 0.9371 | 0.9682 | 0.9524 |
+| **DSB-AM** | 0.7978 | 0.9639 | 0.8730 |
+| **PAM4** | 0.8182 | 0.7725 | 0.7947 |
+| **BPSK** | 0.8008 | 0.7780 | 0.7893 |
+| **16-QAM** | 0.7704 | 0.7492 | 0.7596 |
+| **QPSK** | 0.7793 | 0.7379 | 0.7580 |
+| **Average** | **0.9017** | **0.9010** | **0.9005** |
+
+### Hidden Test Confusion Matrix
+The confusion matrix below highlights the model's ability to distinguish between complex signal modulations under varying noise conditions.
+
+![Test Confusion Matrix](image/confusion_matrix.png)
+
+### Key Insights
+* **Top Performers:** The model shows near-perfect identification for Radar signals like `LFM`, `Barker`, and `GFSK`.
+* **Classification Challenges:** The primary source of error stems from the confusion between `16-QAM`, `QPSK`, and `BPSK`. As seen in the matrix, approximately 2,352 samples of `16-QAM` were misclassified as `QPSK`, and 2,747 samples of `QPSK` were misclassified as `16-QAM`. This is attributed to the similarity of their constellation-based spectrogram signatures, especially at low Signal-to-Noise Ratios (SNR).
+* **Robustness:** Despite these challenges, the model maintains a high macro-average F1-score of 0.90, proving the effectiveness of the lightweight CNN architecture.
