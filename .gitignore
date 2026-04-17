@@ -1,0 +1,10 @@
+# Data for train
+dataset/
+
+# Data for test
+test/
+
+# Results
+runs/
+
+.idea/
