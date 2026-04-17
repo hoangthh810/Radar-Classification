@@ -32,3 +32,35 @@ The dataset consists of 12 different radio frequency signal classes, represented
 
 > **Note:** The dataset covers a wide range of noise conditions, from **snr01** (highest noise) to **snr08** (cleanest signal), ensuring model robustness.
 
+## Models
+### Network Structure:
+![Model](img/model.png)
+> **Note:**: Note: The architecture uses the InvResAttentionBlock (IRB), denoted as IRB (C, S, E, D), where C is the number of output channels and S is the stride (S=2 for downsampling, S=1 to maintain resolution). The E parameter defines the expansion ratio for the hidden layer (hidden_dim = in_channels × E), while D specifies the dilation rate used to expand the receptive field without adding parameters.
+
+## Visualization & Results
+
+### Training Progress
+The charts below illustrate the model's convergence over 40 epochs. The curves demonstrate high stability with no signs of overfitting, successfully exceeding the target accuracy requirement of > 90%.
+
+| Loss Curve | Accuracy Curve |
+| :---: | :---: |
+| ![Loss Curve](loss_curve.png) | ![Accuracy Curve](accuracy_curve.png) |
+
+| F1 Score Curve | Precision & Recall Curves |
+| :---: | :---: |
+| ![F1 Curve](f1_curve.png) | ![Precision Curve](precision_curve.png) <br> ![Recall Curve](recall_curve.png) |
+
+### Confusion Matrices
+Confusion matrices provide a detailed analysis of classification performance across all 12 signal types for both Training and Validation sets.
+
+* **Observations:** Signal classes such as `Barker`, `LFM`, and `Rect` achieve near-perfect recognition accuracy. Minor confusion is observed between `16-QAM` and `QPSK` in high-noise environments (low SNR) due to their similar spectrogram characteristics.
+
+| Training Set | Validation Set |
+| :---: | :---: |
+| ![Train Confusion Matrix](train_confusion_matrix.png) | ![Val Confusion Matrix](val_confusion_matrix.png) |
+
+### Technical Requirements Compliance
+The project strictly adheres to the mandatory technical constraints:
+* **Trainable Parameters:** The total number of model weights is kept below 100,000.
+* **Classification Accuracy:** Final validation accuracy exceeds the 90% threshold.
+* **Reproducibility:** A fixed random seed was implemented across all libraries to ensure consistent results.
