@@ -44,11 +44,11 @@ The charts below illustrate the model's convergence over 40 epochs. The curves d
 
 | Loss Curve | Accuracy Curve |
 | :---: | :---: |
-| ![Loss Curve](loss_curve.png) | ![Accuracy Curve](accuracy_curve.png) |
+| ![Loss Curve](img/loss_curve.png) | ![Accuracy Curve](img/accuracy_curve.png) |
 
 | F1 Score Curve | Precision & Recall Curves |
 | :---: | :---: |
-| ![F1 Curve](f1_curve.png) | ![Precision Curve](precision_curve.png) <br> ![Recall Curve](recall_curve.png) |
+| ![F1 Curve](img/f1_curve.png) | ![Precision Curve](precision_curve.png) <br> ![Recall Curve](img/recall_curve.png) |
 
 ### Confusion Matrices
 Confusion matrices provide a detailed analysis of classification performance across all 12 signal types for both Training and Validation sets.
@@ -57,7 +57,7 @@ Confusion matrices provide a detailed analysis of classification performance acr
 
 | Training Set | Validation Set |
 | :---: | :---: |
-| ![Train Confusion Matrix](train_confusion_matrix.png) | ![Val Confusion Matrix](val_confusion_matrix.png) |
+| ![Train Confusion Matrix](img/train_confusion_matrix.png) | ![Val Confusion Matrix](img/val_confusion_matrix.png) |
 
 ### Technical Requirements Compliance
 The project strictly adheres to the mandatory technical constraints:
