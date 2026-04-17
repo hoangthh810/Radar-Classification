@@ -81,7 +81,7 @@ The model was evaluated on a hidden test set provided by the instructor, consist
 ### Hidden Test Confusion Matrix
 The confusion matrix below highlights the model's ability to distinguish between complex signal modulations under varying noise conditions.
 
-![Test Confusion Matrix](image/confusion_matrix.png)
+![Test Confusion Matrix](img/test_confusion_matrix.png)
 
 ### Key Insights
 * **Top Performers:** The model shows near-perfect identification for Radar signals like `LFM`, `Barker`, and `GFSK`.
