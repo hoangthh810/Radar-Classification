@@ -11,6 +11,4 @@ This project develops an automated system for identifying Radio Frequency (RF) a
 The dataset consists of 12 different radio frequency signal classes, represented as $224 \times 224$ grayscale spectrogram images.
 
 ### Signal Samples
-![12 Signal Classes Preview](classes_preview.png)
-
-*Figure 1: Grayscale spectrogram samples representing 12 types of RF and Radar signals.*
+![12 Signal Classes Preview](img/classes_preview.png)
