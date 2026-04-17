@@ -48,7 +48,7 @@ The charts below illustrate the model's convergence over 40 epochs. The curves d
 
 | F1 Score Curve | Precision & Recall Curves |
 | :---: | :---: |
-| ![F1 Curve](img/f1_curve.png) | ![Precision Curve](precision_curve.png) <br> ![Recall Curve](img/recall_curve.png) |
+| ![F1 Curve](img/f1_curve.png) | ![Precision Curve](img/precision_curve.png) <br> ![Recall Curve](img/recall_curve.png) |
 
 ### Confusion Matrices
 Confusion matrices provide a detailed analysis of classification performance across all 12 signal types for both Training and Validation sets.
