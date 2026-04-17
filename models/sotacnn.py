@@ -20,8 +20,6 @@ class SOTACNN(nn.Module):
 
     def __init__(self, num_classes: int = 12):
         super().__init__()
-        dp = self.DROP_PATH_RATE
-        n  = 7
 
         self.stem = nn.Sequential(
             nn.Conv2d(3, 16, 3, stride=2, padding=1, bias=False),
